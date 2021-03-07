@@ -1,0 +1,16 @@
+{
+  "name": "mnist-js",
+  "version": "1.0.0",
+  "description": "An easy way to use the MNIST data set in javascript.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify ./src/index.js > ./dist/index.js"
+  },
+  "author": "Shealyn Hindenlang",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "browserify": "*"
+  }
+}
