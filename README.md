@@ -23,11 +23,11 @@ To use, construct an instance of the `MNIST` class. All functionality is accesse
 const mnist = new MNIST();
 
 // Specifying all parameters to custom values
-const mnist = new MNIST({trainingCount: 30000, testCount: 5000, includedDigits: [1, 3, 5], batchSize: 10});
+const mnist = new MNIST({trainCount: 30000, testCount: 5000, includedDigits: [1, 3, 5], batchSize: 10});
 ```
 ### Parameters
 
-`trainingCount [optional]: number` 
+`trainCount [optional]: number` 
 
 - The number (between 0 and 60,000) of digit samples you want in your training set, chosen randomly.
 - `default = 60,000`
@@ -89,7 +89,7 @@ network.test(mnist.testSamples);
 2. Construct a MNIST instance to test and train your NN without batches
 ```javascript
 const network = new NeuralNetwork(); // example of a NN class to train and test
-const mnist = new mnist({trainingCount: 55000});
+const mnist = new mnist({trainCount: 55000});
 
 // Train using all training samples at once
 network.train(mnist.trainingSamples);
