@@ -1,5 +1,5 @@
 {
-  "name": "mnist-js",
+  "name": "mnist-javascript",
   "version": "1.0.0",
   "description": "An easy way to use the MNIST data set in javascript.",
   "main": "src/index.js",

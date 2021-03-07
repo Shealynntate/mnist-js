@@ -8,9 +8,9 @@ The training set can include up to 60,000 digits and the test set up to 10,000. 
 
 # Installation
 
-for node.js: `npm install mnist-js --save`
+for node.js: `npm install mnist-javascript --save`
 
-for the browser: `bower install mnist-js --save`
+for the browser: `bower install mnist-javascript --save`
 
 # Usage
 
