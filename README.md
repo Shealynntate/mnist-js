@@ -60,14 +60,18 @@ const threeSample = {
 `trainSamples: Sample[]` All the training samples in random order (ignores batching)
   ### Methods
 `nextBatch()` - returns a `Sample[]` of the next batch, of length `batchSize` or `null` if no batches remain.
+
 `hasBatch()` - returns `true` if there are still batches to iterate over, `false` otherwise.
+
 `resetBatches()` - resets the internal batch index so calling `nextBatch()` will start over with the first training batch.
 
 ## Testing Functionality
 `testSamples: Sample[]` All the test samples in random order
  ### Methods
 `nextTest()` - returns the next test as a `Sample` or `null` if no tests remain.
+
 `hasTest()` - returns `true` if there are still tests to iterate over, `false` otherwise.
+
 `resetTests()` - resets the internal test index so calling `nextTest()` will start over with the first `Sample`.
 
 ## Example Use Cases
