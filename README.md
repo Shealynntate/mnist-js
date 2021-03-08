@@ -139,7 +139,14 @@ const mnist = new mnist();
 const ctx = window.getElementById("myCanvas").getContext('2d'); // grab a canvas element
 const sampleThree = mnist.getDigit(3)[0]; // grab a random sample 3 to render
 
+// Draw an image at location (0, 0) at 1x the size
 mnist.drawDigit(sampleThree.input, ctx);
+
+const xOffset = 100;
+const yOffest = 50;
+const scale = 3;
+// Draw an image at location (100, 50) at 3x the size
+mnist.drawDigit(sampleThree.input, ctx, xOffset, yOffset, scale);
 ```
 ### Parameters
 `pixels: number[]` An array of 784 pixel values to render (the `input` of a sample)
@@ -149,6 +156,8 @@ mnist.drawDigit(sampleThree.input, ctx);
 `x [optional]: number` X offset into the canvas for the image
 
 `y [optional]: number` Y offset into the canvas for the image
+
+`scale [optional]: number` A scalar applied to the image. It's set to 1 by default.
 
 # License
 
