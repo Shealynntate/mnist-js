@@ -23,11 +23,11 @@ To use, construct an instance of the `MNIST` class. All functionality is accesse
 const mnist = new MNIST();
 
 // Specifying all parameters to custom values
-const mnist = new MNIST({trainingCount: 30000, testCount: 5000, includedDigits: [1, 3, 5], batchSize: 10});
+const mnist = new MNIST({trainCount: 30000, testCount: 5000, includedDigits: [1, 3, 5], batchSize: 10});
 ```
 ### Parameters
 
-`trainingCount [optional]: number` 
+`trainCount [optional]: number` 
 
 - The number (between 0 and 60,000) of digit samples you want in your training set, chosen randomly.
 - `default = 60,000`
@@ -60,14 +60,18 @@ const threeSample = {
 `trainSamples: Sample[]` All the training samples in random order (ignores batching)
   ### Methods
 `nextBatch()` - returns a `Sample[]` of the next batch, of length `batchSize` or `null` if no batches remain.
+
 `hasBatch()` - returns `true` if there are still batches to iterate over, `false` otherwise.
+
 `resetBatches()` - resets the internal batch index so calling `nextBatch()` will start over with the first training batch.
 
 ## Testing Functionality
 `testSamples: Sample[]` All the test samples in random order
  ### Methods
 `nextTest()` - returns the next test as a `Sample` or `null` if no tests remain.
+
 `hasTest()` - returns `true` if there are still tests to iterate over, `false` otherwise.
+
 `resetTests()` - resets the internal test index so calling `nextTest()` will start over with the first `Sample`.
 
 ## Example Use Cases
@@ -89,7 +93,7 @@ network.test(mnist.testSamples);
 2. Construct a MNIST instance to test and train your NN without batches
 ```javascript
 const network = new NeuralNetwork(); // example of a NN class to train and test
-const mnist = new mnist({trainingCount: 55000});
+const mnist = new mnist({trainCount: 55000});
 
 // Train using all training samples at once
 network.train(mnist.trainingSamples);
@@ -135,7 +139,14 @@ const mnist = new mnist();
 const ctx = window.getElementById("myCanvas").getContext('2d'); // grab a canvas element
 const sampleThree = mnist.getDigit(3)[0]; // grab a random sample 3 to render
 
+// Draw an image at location (0, 0) at 1x the size
 mnist.drawDigit(sampleThree.input, ctx);
+
+const xOffset = 100;
+const yOffest = 50;
+const scale = 3;
+// Draw an image at location (100, 50) at 3x the size
+mnist.drawDigit(sampleThree.input, ctx, xOffset, yOffset, scale);
 ```
 ### Parameters
 `pixels: number[]` An array of 784 pixel values to render (the `input` of a sample)
@@ -145,6 +156,8 @@ mnist.drawDigit(sampleThree.input, ctx);
 `x [optional]: number` X offset into the canvas for the image
 
 `y [optional]: number` Y offset into the canvas for the image
+
+`scale [optional]: number` A scalar applied to the image. It's set to 1 by default.
 
 # License
 
